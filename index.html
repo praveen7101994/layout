@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+ 
+      .container {
+        display: grid;
+        height: 100vh;
+        border: 1px solid red;
+        background: yellow;
+        grid-template-areas:
+          'header     header    header        header      header'
+          'sidebar    sidebar   cc              cc          cc';
+      }
+      #header {
+        grid-area: header;
+        background: cyan;
+      }
+
+      #sidebar {
+        grid-area: sidebar;
+        min-width: 200px;
+        background: #9f98ce;
+      }
+
+      .contentarea {
+        grid-area: cc;
+        border: 1px solid black;
+        background: yellowgreen;
+      }
+      #header {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-around;
+        border: 1px solid black;
+        height: 60px;
+      }
+      .leadlogo {
+        margin: 10px;
+        padding: 10px 50px;
+        border: 1px solid black;
+        text-align: center;
+      }
+      .fa {
+        margin-left: 10px;
+      }
+      .headerleft {
+        margin-left: auto;
+        padding: 10px;
+      }
+
+      #sidebar {
+        border: 1px solid black;
+        
+        display: flex;
+        flex-direction: column;
+      }
+      .sideitem {
+        font-size: 18px;
+        padding: 5px;
+        text-align: center;
+        border-bottom: 1px solid black;
+        width: match-parent;
+      }
+      .sidebaritem .heading {
+        padding: 5px;
+        font-size: 20px;
+
+        border-bottom: 1px solid black;
+        width: match-parent;
+      }
+      .sidebaritem .active {
+        background-color: #9f98ce;
+        color: white;
+      }
+      .content_heading {
+        border-bottom: 1px solid black;
+      }
+
+      .main {
+        padding: 1rem;
+      }
+      .inlineform {
+        display: flex;
+      }
+      input[type='text'],
+      input[type='password'],
+      input[type='submit'],
+      input[cat='list'],
+      select {
+        padding: 10px 8px;
+        margin: 6px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      * {
+          overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+
+      <div class="container">
+        <div id="header">
+          <div class="leadlogo">LEAD Logo</div>
+          <div class="headerleft">
+            <span><i class="fa fa-bell"></i></span>
+            <span><i class="fa fa-user"></i> Person Name</span>
+          </div>
+        </div>
+        <div id="sidebar">
+          <div class="sidebaritem">
+            <div class="heading">Students</div>
+            <div class="sideitem active">
+              <a>- View Students</a>
+            </div>
+          </div>
+        </div>
+        <div class="contentarea">
+          <div class="main">
+            <h3 class="content_heading">Add Student</h3>
+            <div class="inlineform">
+              <form action="">
+                <input type="text" name="name" id="name" placeholder="Name" />
+                <input type="text" name="age" id="age" placeholder="Age" />
+                <input
+                  placeholder="School"
+                  list="schools"
+                  name="browser"
+                  id="school"
+                  cat="list"
+                />
+                <datalist id="schools">
+                  <option value="OPC"> </option>
+                  <option value="DPC"> </option>
+                </datalist>
+
+                <input
+                  placeholder="Class"
+                  list="Classes"
+                  name="class"
+                  id="class"
+                  cat="list"
+                />
+                <datalist id="Classes">
+                  <option value="1st"> </option>
+                  <option value="2nd"> </option>
+                </datalist>
+
+                <input
+                  placeholder="Division"
+                  list="divisions"
+                  name="division"
+                  id="division"
+                  cat="list"
+                />
+                <datalist id="divisions">
+                  <option value="1st"> </option>
+                  <option value="2nd"> </option>
+                </datalist>
+
+                <input type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
